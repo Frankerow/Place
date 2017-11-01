@@ -8,6 +8,8 @@ namespace interfaces
 {
     public interface IDAL 
     {
-
+        bool AddProduct(Guid id,string country,string mark,string model,string presence,double price);
+        bool DeleteProduct();
+        bool UpdateProduct();
     }
 }
