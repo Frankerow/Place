@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace interfaces
 {
-    public interface IDAL
+    public interface IDAL 
     {
 
     }
