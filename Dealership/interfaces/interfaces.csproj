@@ -44,5 +44,11 @@
     <Compile Include="IDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\entities\entities.csproj">
+      <Project>{DB14F3C2-17E2-434B-B217-90DB447EA192}</Project>
+      <Name>entities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

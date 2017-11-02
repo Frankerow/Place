@@ -43,5 +43,15 @@
     <Compile Include="Logic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dal\dal.csproj">
+      <Project>{06ca0bd5-5fad-4e02-a04b-afe47bef228f}</Project>
+      <Name>dal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\interfaces\interfaces.csproj">
+      <Project>{05fd9af6-1de4-4f60-a404-e2cd99a039b2}</Project>
+      <Name>interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
