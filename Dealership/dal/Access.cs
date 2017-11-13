@@ -34,12 +34,17 @@ namespace dal
             {
                 string com = "INSERT INTO [dbo].[Customers] (Id,Thename,Adress,Phone) VALUES (@Id,@Thename,@Adress,@Phone)";
 
-                string com1 = "INSERT INTO [dbo].[CustomersMoreDetail] (Id,BytePhoto,Type,IdUser,Description) VALUES (@Id,@BytePhoto,@Type,@IdUser,@Description)";
+                string com1 = "INSERT INTO [dbo].[Customers_More_Detail] (Id,PassportSerius,PassportNumber) VALUES (@Id,@PassportSerius,@PassportNumber)";
                 SqlCommand comand = new SqlCommand(com, connectoin);
                 comand.Parameters.AddWithValue("@Id", customer.Id);
                 comand.Parameters.AddWithValue("@Thename", customer.TheName);
                 comand.Parameters.AddWithValue("@Adress", customer.Adress);
                 comand.Parameters.AddWithValue("@Phone", customer.Phone);
+
+                SqlCommand comand1 = new SqlCommand(com1, connectoin);
+                comand1.Parameters.AddWithValue("@Id", customersMoreDetail.Id);
+                comand1.Parameters.AddWithValue("@PassportSerius", customersMoreDetail.PassportNumber);
+                comand1.Parameters.AddWithValue("@PassportNumber", customersMoreDetail.PassportSerius);
 
 
                 connectoin.Open();
@@ -50,11 +55,58 @@ namespace dal
 
         public bool AddProduct(Product product, TechnicalData technical)
         {
-            throw new NotImplementedException();
+            using (SqlConnection connectoin = new SqlConnection(connectionstring))
+            {
+                string com = "INSERT INTO [dbo].[Product] (Id,Country,Mark,Model,Presense,Price) VALUES (@Id,@Country,@Mark,@Model,@Presense,@Price)";
+
+                string com1 = "INSERT INTO [dbo].[Technical_Data] (Id,Bodytype,Numberofdoors,Numberofplaces,Euginetype,Euginelocation,Euginevolume) VALUES (@Id,@Bodytype,@Numberofdoors,@Numberofplaces,@Euginetype,@Euginelocation,@Euginevolume)";
+                SqlCommand comand = new SqlCommand(com, connectoin);
+                comand.Parameters.AddWithValue("@Id", product.Id);
+                comand.Parameters.AddWithValue("@Country", product.Country);
+                comand.Parameters.AddWithValue("@Mark", product.Mark);
+                comand.Parameters.AddWithValue("@Model", product.Model);
+                comand.Parameters.AddWithValue("@Presense", product.Presense);
+                comand.Parameters.AddWithValue("@Price", product.Price);
+
+                SqlCommand comand1 = new SqlCommand(com1, connectoin);
+                comand1.Parameters.AddWithValue("@Id", technical.Id);
+                comand1.Parameters.AddWithValue("@Bodytype", technical.BodyType);
+                comand1.Parameters.AddWithValue("@Numberofdoors", technical.Numbersofdoors);
+                comand1.Parameters.AddWithValue("@Numberofplaces", technical.Numbersofplaces);
+                comand1.Parameters.AddWithValue("@Euginetype", technical.EugineType);
+                comand1.Parameters.AddWithValue("@Euginelocation", technical.EugineLocation);
+                comand1.Parameters.AddWithValue("@Euginevolume", technical.EugineVolume);
+
+
+                connectoin.Open();
+
+                return comand.ExecuteNonQuery() == 1;
+            }
         }
 
         public bool AddPurchase(Purchase purchase)
         {
+            //using (SqlConnection connectoin = new SqlConnection(connectionstring))
+            //{
+            //    string com = "INSERT INTO [dbo].[Purchase] (Id,Thename,Adress,Phone) VALUES (@Id,@Thename,@Adress,@Phone)";
+
+            //    string com1 = "INSERT INTO [dbo].[Customers_More_Detail] (Id,PassportSerius,PassportNumber) VALUES (@Id,@PassportSerius,@PassportNumber)";
+            //    SqlCommand comand = new SqlCommand(com, connectoin);
+            //    comand.Parameters.AddWithValue("@Id", customer.Id);
+            //    comand.Parameters.AddWithValue("@Thename", customer.TheName);
+            //    comand.Parameters.AddWithValue("@Adress", customer.Adress);
+            //    comand.Parameters.AddWithValue("@Phone", customer.Phone);
+
+            //    SqlCommand comand1 = new SqlCommand(com1, connectoin);
+            //    comand1.Parameters.AddWithValue("@Id", customersMoreDetail.Id);
+            //    comand1.Parameters.AddWithValue("@PassportSerius", customersMoreDetail.PassportNumber);
+            //    comand1.Parameters.AddWithValue("@PassportNumber", customersMoreDetail.PassportSerius);
+
+
+            //    connectoin.Open();
+
+            //    return comand.ExecuteNonQuery() == 1;
+            //}
             throw new NotImplementedException();
         }
 

@@ -48,6 +48,10 @@
       <Project>{06ca0bd5-5fad-4e02-a04b-afe47bef228f}</Project>
       <Name>dal</Name>
     </ProjectReference>
+    <ProjectReference Include="..\entities\entities.csproj">
+      <Project>{db14f3c2-17e2-434b-b217-90db447ea192}</Project>
+      <Name>entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\interfaces\interfaces.csproj">
       <Project>{05fd9af6-1de4-4f60-a404-e2cd99a039b2}</Project>
       <Name>interfaces</Name>
