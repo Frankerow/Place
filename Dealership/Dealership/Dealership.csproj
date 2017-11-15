@@ -97,6 +97,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CustomersMoreDetailVM.cs" />
+    <Compile Include="Models\CustomersVM.cs" />
+    <Compile Include="Models\ProductVM.cs" />
+    <Compile Include="Models\Repo.cs" />
+    <Compile Include="Models\TechnicalDataVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -112,7 +117,20 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\bll\bll.csproj">
+      <Project>{ffa7f267-ad65-4b1d-8d28-5279f26dedfb}</Project>
+      <Name>bll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\entities\entities.csproj">
+      <Project>{db14f3c2-17e2-434b-b217-90db447ea192}</Project>
+      <Name>entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\interfaces\interfaces.csproj">
+      <Project>{05fd9af6-1de4-4f60-a404-e2cd99a039b2}</Project>
+      <Name>interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
