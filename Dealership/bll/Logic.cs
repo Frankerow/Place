@@ -62,7 +62,7 @@ namespace bll
 
         public List<Product> GetAllProduct()
         {
-            throw new NotImplementedException();
+           return dal1.GetAllProduct();
         }
 
         public Product GetOneProduct(string mark, string model)
