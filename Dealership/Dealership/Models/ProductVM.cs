@@ -14,9 +14,9 @@ namespace Dealership.Models
         public string Mark { get; set; }
         public string Model { get; set; }
         public string Presense { get; set; }
-        public double Price { get; set; }
+        public string Price { get; set; }
 
-        public static bool AddProduct(ProductVM product,TechnicalDataVM technicalDataVM)
+        public static bool AddProduct(ProductVM product)
         {
             var listprod =new Product();
             listprod.Id = product.Id;
@@ -26,16 +26,35 @@ namespace Dealership.Models
             listprod.Presense = product.Presense;
             listprod.Price = product.Price;
 
-            var listte = new TechnicalData();
-            listte.Id = technicalDataVM.Id;
-            listte.Numbersofdoors = technicalDataVM.Numbersofdoors;
-            listte.Numbersofplaces = technicalDataVM.Numbersofplaces;
-            listte.EugineType = technicalDataVM.EugineType;
-            listte.EugineLocation = technicalDataVM.EugineLocation;
-            listte.EugineVolume = technicalDataVM.EugineVolume;
-            listte.BodyType = technicalDataVM.BodyType;
-
-           return Repo.repo.AddProduct(listprod,listte);
+           return Repo.repo.AddProduct(listprod);
         }
+
+        public static List<ProductVM> GetAllProduct()
+        {
+            var list = Repo.repo.GetAllProduct();
+            List<ProductVM> list1 = new List<ProductVM>();
+            foreach (var item in list)
+            {
+                if (item != null)
+                {
+                    list1.Add(new ProductVM()
+                    {
+                        Id = item.Id,
+                        Country = item.Country,
+                        Mark = item.Mark,
+                        Model = item.Model,
+                        Presense = item.Presense,
+                        Price = item.Price
+                    }
+                        );
+                }
+              
+            }
+            return list1;
+
+
+        }
+
+       
     }
 }

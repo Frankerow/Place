@@ -9,6 +9,7 @@ namespace Dealership.Models
 {
     public class Repo
     {
+
         public static IBLL repo = new Logic();
 
     }

@@ -13,14 +13,14 @@ namespace entities
         public string Mark { get; set; }
         public string Model { get; set; }
         public string Presense { get; set; }
-        public double Price { get; set; }
+        public string Price { get; set; }
 
         public Product()
         {
 
         }
 
-        public Product(Guid id,string country,string mark,string model,string presense,double price)
+        public Product(Guid id,string country,string mark,string model,string presense,string price)
         {
             this.Id = id;
             this.Country = country;
@@ -29,5 +29,6 @@ namespace entities
             this.Presense = presense;
             this.Price = price;
         }
+
     }
 }

@@ -20,19 +20,41 @@ namespace bll
 
         }
 
-
-
-
-
-
-        public bool AddCustomer(Customers customer, CustomersMoreDetail customersMoreDetail)
+        public bool AddCustomer(Customers customer)
         {
-            return dal1.AddCustomer(customer, customersMoreDetail);
+           return dal1.AddCustomer(customer);
         }
 
-        public bool AddProduct(Product product, TechnicalData technical)
+
+
+
+
+
+        //public bool AddCustomer(Customers customer, CustomersMoreDetail customersMoreDetail)
+        //{
+        //    return dal1.AddCustomer(customer, customersMoreDetail);
+        //}
+
+
+        public bool AddMoreDetail(CustomersMoreDetail customersMoreDetail)
         {
-            throw new NotImplementedException();
+            return dal1.AddCustomersMoreDetail(customersMoreDetail);
+        }
+
+        public bool AddProduct(Product product)
+        {
+            return dal1.AddProduct(product);
+        }
+
+        //public bool AddProduct(Product product)
+        //{
+        //    return dal1.AddProduct(product);
+        //}
+
+        public bool AddTecnicalData(TechnicalData technicalData)
+        {
+           return dal1.AddTechnicalData(technicalData);
+          
         }
 
         public bool AddPurchase(Purchase purchase)
@@ -40,17 +62,34 @@ namespace bll
             throw new NotImplementedException();
         }
 
-        public bool DeleteCustomer()
+        public bool AddTechnicalData(TechnicalData technicalData)
+        {
+            return dal1.AddTechnicalData(technicalData);
+        }
+
+        public bool DeleteCustomer(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public bool DeleteProduct()
+
+        public bool DeleteMoreDetail(Guid id)
         {
             throw new NotImplementedException();
         }
+
+        public bool DeleteProduct(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
 
         public bool DeletePurchase()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool DeleteTecnicalData(Guid id)
         {
             throw new NotImplementedException();
         }
@@ -62,7 +101,7 @@ namespace bll
 
         public List<Product> GetAllProduct()
         {
-           return dal1.GetAllProduct();
+           return dal1.GetAllProduct().ToList();
         }
 
         public Product GetOneProduct(string mark, string model)
@@ -83,6 +122,11 @@ namespace bll
         public bool UpdatePurchase()
         {
             throw new NotImplementedException();
+        }
+
+        public TechnicalData GetTechnicalDataById(Guid id)
+        {
+            return dal1.GetTechnicalDataById(id);
         }
     }
 }

@@ -9,20 +9,25 @@ namespace interfaces
 {
     public interface IDAL 
     {
-        bool AddProduct(Product product,TechnicalData technical);
-        bool DeleteProduct();
+        bool AddProduct(Product product);
+        bool DeleteProduct(Guid id);
+        bool DeleteTechnicalData(Guid id);
         bool UpdateProduct();
         Product GetOneProduct(string mark, string model);
-        List <Product> GetAllProduct();
+        IEnumerable<Product> GetAllProduct();
 
-        bool AddCustomer(Customers customer,CustomersMoreDetail customersMoreDetail);
-        bool DeleteCustomer();
+        bool AddCustomer(Customers customer);
+        bool AddCustomersMoreDetail(CustomersMoreDetail customersMoreDetail);
+        bool DeleteCustomer(Guid id);
+        bool DeleteCustomerMoreDetail(Guid id);
         bool UpdateCustomer();
         List<Customers> GetAllCustomers();
 
         bool AddPurchase(Purchase purchase);
         bool DeletePurchase();
         bool UpdatePurchase();
+        bool AddTechnicalData(TechnicalData technicalData);
+        TechnicalData GetTechnicalDataById(Guid id);
 
 
 
